@@ -80,8 +80,23 @@ nav a.cta:hover{background:var(--sky-dark)}
 /* photo placeholders */
 .ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#D6E7F4,#E3F1E9)}
 .ph img{width:100%;height:100%;object-fit:cover}
+.ph video{width:100%;height:100%;object-fit:cover;display:block}
+/* carousel */
+.carousel{position:relative;overflow:hidden}
+.carousel .carousel-track{position:relative;width:100%;height:100%}
+.carousel-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.carousel-slide.active{opacity:1}
+
 .ph.missing img{display:none}
 .ph.missing::after{content:"Add your photo: " attr(data-file);position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:1.2rem;color:var(--ink-2);font-weight:600;font-size:1.05rem}
+
+/* YouTube channel showcase */
+.ph.youtube{display:grid;grid-template-rows:1fr auto;gap:.7rem}
+.ph.youtube .yt-channel{display:block;position:relative;border-radius:12px;overflow:hidden;cursor:pointer}
+.ph.youtube .yt-channel img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.youtube .yt-channel .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(15,34,55,.18)}
+.ph.youtube .yt-channel .play::after{content:"";display:block;margin-left:6px;border-left:18px solid var(--ink);border-top:10px solid transparent;border-bottom:10px solid transparent}
+.ph.youtube .subscribe{display:flex;justify-content:center;padding:0 0 0 .3rem}
 
 /* the aircraft-window portrait */
 .window{aspect-ratio:4/5;width:min(100%,400px);margin-left:auto;border-radius:46% / 32%;
@@ -270,7 +285,7 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
         </div>
       </div>
       <div class="ph window" data-file="images/profile.jpg">
-        <img src="images/profile.jpg" alt="Portrait of Sarani Jayasooriya" onerror="this.parentElement.classList.add('missing')">
+        <img src="images/profile.jpeg" alt="Portrait of Sarani Jayasooriya" onerror="this.parentElement.classList.add('missing')">
       </div>
     </div>
 
@@ -332,7 +347,12 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
 
     <div class="cards">
       <article class="card">
-        <div class="ph" data-file="images/aerogenz.jpg"><img src="images/aerogenz.jpg" alt="AeroGenZ members at an event" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="ph" data-file="videos/aerogenz.mp4">
+          <video autoplay muted loop playsinline preload="metadata" poster="images/aerogenz.jpg" aria-label="AeroGenZ event video">
+            <source src="videos/aerogenz.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <div class="body">
           <div class="role-tag">Founder</div>
           <h3>AeroGenZ</h3>
@@ -345,7 +365,7 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
       </article>
 
       <article class="card">
-        <div class="ph" data-file="images/an32b.jpg"><img src="images/an32b.jpg" alt="The AN-32B aircraft engine at the Faculty of Engineering" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="ph" data-file="images/an32b.jpg"><img src="images/an32b.jpeg" alt="The AN-32B aircraft engine at the Faculty of Engineering" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
         <div class="body">
           <div class="role-tag">Advocate and coordinator</div>
           <h3>An AN-32B engine for the Faculty of Engineering</h3>
@@ -358,7 +378,23 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
       </article>
 
       <article class="card">
-        <div class="ph" data-file="images/engex.jpg"><img src="images/engex.jpg" alt="The AeroZone and drone show at ENGEX 2025" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="ph carousel" data-file="images/engex.jpg" aria-label="ENGEX gallery">
+          <div class="carousel-track">
+            <img class="carousel-slide" src="images/4.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/5.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/7.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/8.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide active" src="images/1.jpg" alt="ENGEX 2025 photo 1" loading="lazy">
+            <img class="carousel-slide" src="images/2.jpg" alt="ENGEX 2025 photo 2" loading="lazy">
+            <img class="carousel-slide" src="images/3.jpg" alt="ENGEX 2025 photo 3" loading="lazy"> 
+            <img class="carousel-slide" src="images/6.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/10.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/11.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/12.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/13.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+            <img class="carousel-slide" src="images/14.jpg" alt="ENGEX 2025 photo 3" loading="lazy">
+          </div>
+        </div>
         <div class="body">
           <div class="role-tag">Team lead</div>
           <h3>ENGEX 2025</h3>
@@ -371,7 +407,15 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
       </article>
 
       <article class="card">
-        <div class="ph" data-file="images/aero-girl.jpg"><img src="images/aero-girl.jpg" alt="Sarani sharing aerospace learning through The Aero Girl" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="ph youtube" data-file="https://www.youtube.com/@theaerogirl/">
+          <a class="yt-channel" href="https://www.youtube.com/@theaerogirl/" target="_blank" rel="noopener">
+            <img src="images/aerogirl.jpg" alt="The Aero Girl YouTube channel" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </a>
+          <div class="subscribe">
+            <div class="g-ytsubscribe" data-channel="theaerogirl" data-layout="default" data-count="default"></div>
+          </div>
+        </div>
         <div class="body">
           <div class="role-tag">Creator</div>
           <h3>The Aero Girl</h3>
@@ -598,7 +642,7 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
     <h2>Let's connect</h2>
     <p class="lede">If you work on education, aerospace, agriculture technology or youth innovation, I would love to hear from you.</p>
     <div class="contact-list">
-      <a class="btn primary" href="mailto:e20173@eng.pdn.ac.lk">Email me</a>
+      <a class="btn primary" href="mailto:jayasooriyasarani@gamil.com">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/sarani-vinodya-23072001" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/AeroSaraVJ23" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -644,6 +688,32 @@ footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);f
     b.addEventListener('click', () => { lbImg.src = b.dataset.full; lbImg.alt = b.querySelector('img').alt; lb.showModal(); });
   });
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+
+  // Simple autoplaying image carousel for .carousel elements
+  document.querySelectorAll('.carousel').forEach(car => {
+    const slides = Array.from(car.querySelectorAll('.carousel-slide'));
+    if (slides.length < 2) return;
+    let idx = 0;
+    let timer = null;
+    const show = i => {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[i].classList.add('active');
+    };
+    const start = () => { timer = setInterval(() => { idx = (idx + 1) % slides.length; show(idx); }, 3000); };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+    car.addEventListener('mouseenter', stop);
+    car.addEventListener('mouseleave', start);
+    show(0);
+    start();
+  });
+
+  // Load Google platform script for YouTube subscribe button if not present
+  if (!document.querySelector('script[src="https://apis.google.com/js/platform.js"]')) {
+    const s = document.createElement('script');
+    s.src = 'https://apis.google.com/js/platform.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
 </script>
 </body>
 </html>
