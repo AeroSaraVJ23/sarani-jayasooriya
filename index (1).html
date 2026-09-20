@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarani Jayasooriya | Aerospace, AI and Impact Portfolio</title>
+<meta name="description" content="Computer Engineering undergraduate at the University of Peradeniya, founder of AeroGenZ and co-developer of SkyT. A portfolio for the Future Action Summit Australia, aligned with the UN Sustainable Development Goals.">
+<meta property="og:title" content="Sarani Jayasooriya | Aerospace, AI and Impact Portfolio">
+<meta property="og:description" content="Creating opportunities that outlive me: aerospace education, drone technology and precision agriculture from Sri Lanka.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/drone.png">
+<meta name="theme-color" content="#F7FAFC">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F7FAFC;
+  --tint:#EAF3FA;
+  --surface:#FFFFFF;
+  --ink:#0F2237;
+  --ink-2:#3F5468;
+  --line:#D5E2EC;
+  --sky:#1F6FB2;
+  --sky-dark:#175A93;
+  --leaf:#2D7A57;
+  --leaf-tint:#E6F3EC;
+  --s4:#C5192D; --s8:#A21942; --s9:#D9541A; --s12:#B07A1F;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(15,34,55,.06), 0 18px 40px -24px rgba(15,34,55,.28);
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--sky-dark);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0 0 .6em;letter-spacing:-.01em;color:var(--ink)}
+h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;letter-spacing:-.025em}
+h2{font-size:clamp(1.95rem,3.4vw,2.7rem);font-weight:700}
+h3{font-size:1.4rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+.lede{font-size:1.25rem;color:var(--ink-2);max-width:62ch}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.7rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(247,250,252,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:1rem}
+.brand{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0;align-items:center}
+nav a{display:block;padding:.55rem .9rem;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:1.02rem}
+nav a:hover{background:var(--tint)}
+nav a.cta{background:var(--ink);color:#fff}
+nav a.cta:hover{background:var(--sky-dark)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:12px;padding:.55rem .9rem;font:600 1rem var(--body);color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 1px 1px, rgba(31,111,178,.13) 1px, transparent 0) 0 0/26px 26px,
+  linear-gradient(180deg,#E7F1F9 0%,#F7FAFC 100%);
+  padding:clamp(3rem,7vw,6rem) 0 clamp(3.5rem,7vw,6rem)}
+.hero .path{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero h1{margin-bottom:.45em}
+.hero .role{font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,2.2vw,1.6rem);color:var(--leaf);margin-bottom:1.1rem}
+.hero .lede{margin-bottom:1.8rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.9rem 1.5rem;border-radius:999px;font-weight:700;font-size:1.05rem;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--sky-dark);border-color:var(--sky-dark)}
+
+/* photo placeholders */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#D6E7F4,#E3F1E9)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.missing img{display:none}
+.ph.missing::after{content:"Add your photo: " attr(data-file);position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:1.2rem;color:var(--ink-2);font-weight:600;font-size:1.05rem}
+
+/* the aircraft-window portrait */
+.window{aspect-ratio:4/5;width:min(100%,400px);margin-left:auto;border-radius:46% / 32%;
+  box-shadow:0 0 0 10px #fff,0 0 0 12px var(--line),0 40px 70px -35px rgba(15,34,55,.45);
+  animation:rise .9s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.highlights{margin-top:clamp(2.5rem,5vw,4rem);position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.hl{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem;box-shadow:var(--shadow)}
+.hl strong{display:block;font-family:var(--display);font-size:1.2rem;line-height:1.25;margin-bottom:.35rem}
+.hl span{color:var(--ink-2);font-size:1.02rem;line-height:1.5;display:block}
+
+/* sections */
+section{padding:clamp(3.5rem,7vw,6rem) 0}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+section.tint{background:var(--tint)}
+.sec-head{max-width:760px;margin-bottom:2.5rem}
+
+/* story timeline */
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.timeline{list-style:none;margin:0;padding:0 0 0 2rem;border-left:3px solid var(--line)}
+.timeline li{position:relative;padding:0 0 1.9rem 1.2rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:calc(-2rem - 9px);top:.5rem;width:15px;height:15px;border-radius:50%;background:var(--surface);border:4px solid var(--sky)}
+.timeline h3{font-size:1.25rem;margin-bottom:.3em}
+.timeline p{margin:0;color:var(--ink-2)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .85rem .3rem .3rem;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.97rem;font-weight:600;line-height:1.2;color:var(--ink)}
+.chip b{width:1.8rem;height:1.8rem;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.95rem;font-weight:700}
+.n4{background:var(--s4)}.n8{background:var(--s8)}.n9{background:var(--s9)}.n12{background:var(--s12)}
+
+/* work cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .ph{aspect-ratio:16/10}
+.card .body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;flex:1}
+.role-tag{font-weight:700;color:var(--leaf);font-size:1.02rem;margin-bottom:.4rem}
+.card p{color:var(--ink-2)}
+.card .chips{margin-top:auto;padding-top:.4rem}
+
+/* skyt */
+.skyt-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;margin-bottom:3rem}
+.skyt-intro .ph{aspect-ratio:4/3;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line)}
+.award{display:flex;gap:1rem;align-items:center;background:var(--leaf-tint);border:1px solid #BFDFCE;border-radius:var(--radius);padding:1.1rem 1.3rem;margin:1.4rem 0}
+.award svg{flex:none}
+.award strong{display:block;font-family:var(--display);font-size:1.15rem}
+.system{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-bottom:2.5rem}
+.sys{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;border-top:5px solid var(--sky)}
+.sys:nth-child(2){border-top-color:var(--leaf)}
+.sys:nth-child(3){border-top-color:var(--s9)}
+.sys:nth-child(4){border-top-color:var(--ink)}
+.sys h3{font-size:1.2rem}
+.sys p{margin:0;color:var(--ink-2);font-size:1.03rem;line-height:1.55}
+.tech{display:flex;flex-wrap:wrap;gap:.55rem;margin:0 0 3rem;padding:0;list-style:none}
+.tech li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.4rem .85rem;font-weight:600;font-size:1rem}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.videos .main{grid-column:1/-1;max-width:920px}
+.vid h3{font-size:1.15rem;margin:.9rem 0 .25rem}
+.vid p{color:var(--ink-2);font-size:1.02rem;margin:0}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:#0F2237 center/cover no-repeat;box-shadow:var(--shadow)}
+.yt::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,34,55,.05),rgba(15,34,55,.45))}
+.yt span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:transform .2s}
+.yt:hover span{transform:translate(-50%,-50%) scale(1.08)}
+.yt span::after{content:"";margin-left:6px;border-left:22px solid var(--ink);border-top:14px solid transparent;border-bottom:14px solid transparent}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.gallery button{padding:0;border:0;background:none;cursor:zoom-in;border-radius:14px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.gallery button:hover img{transform:scale(1.04)}
+.links{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.team{margin-top:2rem;color:var(--ink-2);font-size:1.05rem}
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,1100px)}
+dialog::backdrop{background:rgba(15,34,55,.8)}
+dialog img{max-height:86vh;width:auto;margin:auto;border-radius:14px}
+dialog form{text-align:right}
+dialog button.close{margin-bottom:.6rem;background:#fff;border:0;border-radius:999px;padding:.55rem 1.1rem;font:700 1rem var(--body);cursor:pointer}
+
+/* sdg */
+.sdg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-bottom:3.5rem}
+.sdg{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.sdg header{display:flex;gap:1.1rem;align-items:center;padding:1.15rem 1.5rem;color:#fff}
+.sdg header .num{font-family:var(--display);font-weight:800;font-size:3rem;line-height:1}
+.sdg header .goal{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.2}
+.sdg header .goal small{display:block;font:600 1rem var(--body);opacity:.92;margin-bottom:.15rem}
+.sdg .in{padding:1.4rem 1.6rem 1.6rem}
+.sdg h3{font-size:1.25rem}
+.sdg ul{margin:0;padding-left:1.25rem;color:var(--ink-2)}
+.sdg li{margin-bottom:.55rem}
+.sdg li:last-child{margin-bottom:0}
+.h4{background:var(--s4)}.h8{background:var(--s8)}.h9{background:var(--s9)}.h12{background:var(--s12)}
+.matrix-wrap{position:relative;overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{padding:1rem 1.2rem;text-align:center;border-bottom:1px solid var(--line);font-size:1.05rem}
+th:first-child,td:first-child{text-align:left;font-weight:600}
+thead th{color:#fff;font-family:var(--display);font-size:1.05rem;line-height:1.25;vertical-align:bottom}
+thead th:first-child{background:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.dot{display:inline-block;width:1.6rem;height:1.6rem;border-radius:50%}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* posts */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.post{display:flex;flex-direction:column;gap:.5rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:border-color .2s,transform .2s}
+.post:hover{border-color:var(--sky);transform:translateY(-2px);color:var(--ink)}
+.post strong{font-family:var(--display);font-size:1.2rem}
+.post span{color:var(--sky-dark);font-weight:700}
+.post .li{width:2.4rem;height:2.4rem;border-radius:8px;background:#0A66C2;color:#fff;display:grid;place-items:center;font-weight:800;font-family:var(--body);font-size:1.1rem}
+
+/* vision */
+.vision{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+blockquote{margin:0;padding:2rem 2.2rem;background:var(--ink);color:#fff;border-radius:var(--radius);font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.3;font-weight:600;position:relative}
+blockquote::before{content:"";position:absolute;left:2.2rem;top:0;width:64px;height:6px;background:var(--leaf);border-radius:0 0 6px 6px}
+blockquote p{margin:0}
+blockquote p+p{margin-top:.9rem;color:#BFE2CF}
+
+/* contact + footer */
+.contact-list{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}
+footer.site{padding:2rem 0;border-top:1px solid var(--line);color:var(--ink-2);font-size:1.02rem}
+
+/* responsive */
+@media (max-width:980px){
+  .hero-grid,.story,.skyt-intro,.vision{grid-template-columns:1fr}
+  .window{margin:1rem auto 0;width:min(78%,340px)}
+  .highlights,.system{grid-template-columns:repeat(2,1fr)}
+  .posts{grid-template-columns:repeat(2,1fr)}
+  .videos{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:72px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:stretch;padding:.8rem 1.25rem 1.2rem}
+  nav a{padding:.8rem 1rem}
+  .cards,.sdg-grid,.highlights,.system,.posts{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Sarani Jayasooriya</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#story">My story</a></li>
+        <li><a href="#work">Leadership</a></li>
+        <li><a href="#skyt">SkyT</a></li>
+        <li><a href="#sdgs">SDG alignment</a></li>
+        <li><a href="#posts">Highlights</a></li>
+        <li><a class="cta" href="#contact">Connect</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding-bottom:0">
+  <svg class="path" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <path d="M-20 620 C 260 560, 420 200, 760 190 S 1120 90, 1240 20" fill="none" stroke="#1F6FB2" stroke-opacity=".28" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round"/>
+    <path d="M-20 680 C 300 640, 520 320, 860 300 S 1160 200, 1240 150" fill="none" stroke="#2D7A57" stroke-opacity=".22" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round"/>
+    <g transform="translate(1040 62) rotate(-24)" fill="#1F6FB2" fill-opacity=".45">
+      <path d="M0 0 L46 10 L0 20 L8 10 Z"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Sarani Jayasooriya</h1>
+        <p class="role">Computer engineer building aerospace, AI and drone technology</p>
+        <p class="lede">I began by creating an opportunity for myself. Today, I build opportunities that outlive me: a campus aviation community, real aerospace equipment for students, and drone technology for Sri Lankan tea plantations.</p>
+        <div class="btns">
+          <a class="btn primary" href="#sdgs">See my SDG alignment</a>
+          <a class="btn" href="#work">Explore my work</a>
+        </div>
+      </div>
+      <div class="ph window" data-file="images/profile.jpg">
+        <img src="images/profile.jpg" alt="Portrait of Sarani Jayasooriya" onerror="this.parentElement.classList.add('missing')">
+      </div>
+    </div>
+
+    <div class="highlights">
+      <div class="hl"><strong>Founder of AeroGenZ</strong><span>The university's first aviation-focused student organization</span></div>
+      <div class="hl"><strong>Merit Award</strong><span>National ICT Awards 2025, for the SkyT precision agriculture project</span></div>
+      <div class="hl"><strong>AN-32B aircraft engine</strong><span>Secured for the Faculty of Engineering to teach with real equipment</span></div>
+      <div class="hl"><strong>ENGEX 2025</strong><span>Coordinated the AeroZone, drone show and exhibition activities</span></div>
+    </div>
+  </div>
+  <div style="height:clamp(3rem,6vw,5rem)"></div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="alt">
+  <div class="wrap story">
+    <div>
+      <h2>From a childhood dream to a campus aviation community</h2>
+      <p class="lede">I am a Computer Engineering undergraduate at the University of Peradeniya, Sri Lanka, with interests in artificial intelligence, intelligent networks, autonomous systems and aerospace.</p>
+      <p>Leadership, to me, is not only about managing people. It is about creating a vision others can believe in, then building the structures that make it real.</p>
+      <p>Sustainable impact needs more than technical knowledge. It means finding overlooked problems, bringing people together, working through limited resources and setbacks, and building solutions that continue after the person who started them has moved on.</p>
+    </div>
+    <ol class="timeline">
+      <li>
+        <h3>A dream to build aircraft</h3>
+        <p>Aerospace began for me as a childhood dream.</p>
+      </li>
+      <li>
+        <h3>No aerospace pathway at my faculty</h3>
+        <p>When I entered university, I found there was no formal aerospace route within my faculty. I decided not to accept that limit.</p>
+      </li>
+      <li>
+        <h3>Learning it myself</h3>
+        <p>I studied aerospace independently through programs from Delft University of Technology, MIT and IIT Bombay, and shared what I learned through educational content and my "The Aero Girl" initiative.</p>
+      </li>
+      <li>
+        <h3>Founding AeroGenZ</h3>
+        <p>That work grew into the university's first aviation-focused student organization, starting with almost no resources.</p>
+      </li>
+      <li>
+        <h3>Leaving something behind</h3>
+        <p>I worked with stakeholders to bring aerospace equipment to the Faculty of Engineering, so the opportunity stays for the students who follow.</p>
+      </li>
+      <li>
+        <h3>Solving a national problem</h3>
+        <p>I co-developed SkyT, a drone-based system that supports Sri Lanka's tea plantations.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Leadership that turns passion into opportunity for others</h2>
+      <p class="lede">Each initiative below started with a gap I noticed and ended with something students can use.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="ph" data-file="images/aerogenz.jpg"><img src="images/aerogenz.jpg" alt="AeroGenZ members at an event" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="body">
+          <div class="role-tag">Founder</div>
+          <h3>AeroGenZ</h3>
+          <p>The university's first aviation-focused student organization. It grew from almost no resources into a community that introduces students to aviation through workshops, competitions and technical programs, including collaborations with the Sri Lanka Air Force.</p>
+          <div class="chips">
+            <span class="chip"><b class="n4">4</b>Quality Education</span>
+            <span class="chip"><b class="n9">9</b>Innovation and Infrastructure</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ph" data-file="images/an32b.jpg"><img src="images/an32b.jpg" alt="The AN-32B aircraft engine at the Faculty of Engineering" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="body">
+          <div class="role-tag">Advocate and coordinator</div>
+          <h3>An AN-32B engine for the Faculty of Engineering</h3>
+          <p>Through persistent advocacy, coordination and engagement with stakeholders, I helped secure an AN-32B aircraft engine for educational and technical exposure. Students who once had no access to aviation facilities now learn from real aerospace equipment. Our initiatives also expanded aerospace exposure through the Department of Mechanical Engineering.</p>
+          <div class="chips">
+            <span class="chip"><b class="n4">4</b>Quality Education</span>
+            <span class="chip"><b class="n9">9</b>Innovation and Infrastructure</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ph" data-file="images/engex.jpg"><img src="images/engex.jpg" alt="The AeroZone and drone show at ENGEX 2025" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="body">
+          <div class="role-tag">Team lead</div>
+          <h3>ENGEX 2025</h3>
+          <p>I led a team in one of the faculty's major initiatives, coordinating the AeroZone, the drone show and the exhibition activities so that visitors could meet aerospace technology first-hand.</p>
+          <div class="chips">
+            <span class="chip"><b class="n4">4</b>Quality Education</span>
+            <span class="chip"><b class="n9">9</b>Innovation and Infrastructure</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ph" data-file="images/aero-girl.jpg"><img src="images/aero-girl.jpg" alt="Sarani sharing aerospace learning through The Aero Girl" loading="lazy" onerror="this.parentElement.classList.add('missing')"></div>
+        <div class="body">
+          <div class="role-tag">Creator</div>
+          <h3>The Aero Girl</h3>
+          <p>When my faculty had no aerospace pathway, I built my own through programs from Delft University of Technology, MIT and IIT Bombay. The Aero Girl is how I share that learning with other students through educational content.</p>
+          <div class="chips">
+            <span class="chip"><b class="n4">4</b>Quality Education</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SKYT -->
+<section id="skyt" class="tint">
+  <div class="wrap">
+    <div class="skyt-intro">
+      <div>
+        <h2>SkyT: smarter skies, greener growth</h2>
+        <p class="lede">Tea is one of Sri Lanka's important economic sectors, yet labour constraints make monitoring vast plantations by hand increasingly difficult.</p>
+        <p>I co-developed SkyT, a drone-based precision agriculture system that combines UAV imaging, IoT soil sensing and AI-powered crop analysis. It makes plantation monitoring more efficient and data-driven, and it reduces dependence on manual inspection.</p>
+        <div class="award">
+          <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="18" r="12" fill="#2D7A57"/><path d="M15 28 L11 41 L22 35 L33 41 L29 28Z" fill="#2D7A57" fill-opacity=".7"/><path d="M22 11 l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z" fill="#fff"/></svg>
+          <div><strong>Merit Award, National ICT Awards 2025</strong>Recognition for interdisciplinary innovation that responds to a local challenge.</div>
+        </div>
+        <div class="chips">
+          <span class="chip"><b class="n8">8</b>Decent Work and Economic Growth</span>
+          <span class="chip"><b class="n9">9</b>Innovation and Infrastructure</span>
+          <span class="chip"><b class="n12">12</b>Responsible Consumption and Production</span>
+        </div>
+      </div>
+      <div class="ph" data-file="images/skyt.jpg">
+        <img src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/drone.png" alt="SkyT drone flying over a tea plantation" onerror="this.parentElement.classList.add('missing')">
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem">How the system works</h3>
+    <div class="system">
+      <div class="sys">
+        <h3>IoT soil sensors</h3>
+        <p>Solar and battery powered ESP32 units in the estate measure soil nutrients (NPK), pH and humidity, and pass the data to the drone over Bluetooth.</p>
+      </div>
+      <div class="sys">
+        <h3>Autonomous drone</h3>
+        <p>A Raspberry Pi drone flies planned missions, captures aerial images of each estate lot and collects the sensor readings on the way.</p>
+      </div>
+      <div class="sys">
+        <h3>Web dashboard</h3>
+        <p>Managers see each estate and lot, sensor trends and time-stamped aerial images, and can schedule drone missions from one place.</p>
+      </div>
+      <div class="sys">
+        <h3>Cloud backend</h3>
+        <p>Services hosted on AWS ingest the sensor data and imagery and store it securely for analysis.</p>
+      </div>
+    </div>
+
+    <ul class="tech" aria-label="Technologies used">
+      <li>ESP32</li><li>Raspberry Pi 4</li><li>PX4 and ArduPilot</li><li>MAVSDK</li><li>Bluetooth Low Energy</li>
+      <li>React and TypeScript</li><li>Node.js</li><li>Flask</li><li>MySQL</li><li>AWS</li>
+    </ul>
+
+    <h3 style="margin-bottom:1rem">See it fly</h3>
+    <div class="videos">
+      <div class="vid main">
+        <button class="yt" data-id="_puyaP26QAM" data-title="SkyT product demo" style="background-image:url('https://img.youtube.com/vi/_puyaP26QAM/hqdefault.jpg')" aria-label="Play SkyT product demo"><span></span></button>
+        <h3>Product demo</h3>
+        <p>A fully automated drone system for tea plantations: flight, sensor data collection and real-time imaging.</p>
+      </div>
+      <div class="vid">
+        <button class="yt" data-id="H0zSdlDy3xs" data-title="Manual stable flight test" style="background-image:url('https://img.youtube.com/vi/H0zSdlDy3xs/hqdefault.jpg')" aria-label="Play manual stable flight test"><span></span></button>
+        <h3>Manual stable flight</h3>
+        <p>Stability testing under manual control, with altitude hold and failsafe landing checks.</p>
+      </div>
+      <div class="vid">
+        <button class="yt" data-id="yMGoDw3hVJk" data-title="Autonomous stable flight test" style="background-image:url('https://img.youtube.com/vi/yMGoDw3hVJk/hqdefault.jpg')" aria-label="Play autonomous stable flight test"><span></span></button>
+        <h3>Autonomous stable flight</h3>
+        <p>Autopilot mission execution with stable GPS navigation and a validated return-to-launch.</p>
+      </div>
+      <div class="vid">
+        <button class="yt" data-id="41PHwCzPyUE" data-title="Autonomous sensor and imaging flight" style="background-image:url('https://img.youtube.com/vi/41PHwCzPyUE/hqdefault.jpg')" aria-label="Play autonomous sensor and imaging flight"><span></span></button>
+        <h3>Autonomous sensor and imaging</h3>
+        <p>A fully autonomous flight collecting sensor data over Bluetooth and GPS-mapped images.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:3rem 0 0">Project gallery</h3>
+    <div class="gallery">
+      <button data-full="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/1.jpeg" aria-label="Open SkyT photo 1"><img loading="lazy" src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/1.jpeg" alt="SkyT project photo 1"></button>
+      <button data-full="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/2.jpeg" aria-label="Open SkyT photo 2"><img loading="lazy" src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/2.jpeg" alt="SkyT project photo 2"></button>
+      <button data-full="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/3.jpeg" aria-label="Open SkyT photo 3"><img loading="lazy" src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/3.jpeg" alt="SkyT project photo 3"></button>
+      <button data-full="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/4.jpeg" aria-label="Open SkyT photo 4"><img loading="lazy" src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/4.jpeg" alt="SkyT project photo 4"></button>
+      <button data-full="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/5.jpeg" aria-label="Open SkyT photo 5"><img loading="lazy" src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/5.jpeg" alt="SkyT project photo 5"></button>
+      <button data-full="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/6.jpeg" aria-label="Open SkyT photo 6"><img loading="lazy" src="https://cepdnaclk.github.io/e20-3yp-SkyT/assets/img/gallery/6.jpeg" alt="SkyT project photo 6"></button>
+    </div>
+
+    <div class="links">
+      <a class="btn primary" href="https://cepdnaclk.github.io/e20-3yp-SkyT/" target="_blank" rel="noopener">Visit the SkyT project site</a>
+      <a class="btn" href="https://e20-3yp-skyt.pages.dev/" target="_blank" rel="noopener">Open the live dashboard</a>
+      <a class="btn" href="https://youtu.be/4Rkz7F0_JOQ" target="_blank" rel="noopener">Watch the overview video</a>
+    </div>
+    <p class="team">Built with my teammates Chethiya Bandara, Mathisha Bandara and Bimsara Janakantha, Department of Computer Engineering, University of Peradeniya.</p>
+  </div>
+</section>
+
+<!-- SDGs -->
+<section id="sdgs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How my work connects to the Sustainable Development Goals</h2>
+      <p class="lede">Four goals guide what I build. Each one is backed by something I have already done.</p>
+    </div>
+
+    <div class="sdg-grid">
+      <article class="sdg">
+        <header class="h4"><div class="num">4</div><div class="goal"><small>Sustainable Development Goal 4</small>Quality Education</div></header>
+        <div class="in">
+          <h3>Opening aerospace learning where no pathway existed</h3>
+          <ul>
+            <li>Taught myself aerospace through Delft, MIT and IIT Bombay programs and shared it through The Aero Girl.</li>
+            <li>Founded AeroGenZ, which runs workshops, competitions and technical programs.</li>
+            <li>Helped bring an AN-32B engine to the Faculty of Engineering so students learn from real equipment.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sdg">
+        <header class="h9"><div class="num">9</div><div class="goal"><small>Sustainable Development Goal 9</small>Industry, Innovation and Infrastructure</div></header>
+        <div class="in">
+          <h3>Building innovation capacity from campus to plantation</h3>
+          <ul>
+            <li>SkyT joins UAV imaging, IoT soil sensing and AI crop analysis in one working system.</li>
+            <li>Aerospace equipment and exposure at the Faculty of Engineering will serve students long after I graduate.</li>
+            <li>Partnerships, including with the Sri Lanka Air Force, connect students with real aviation expertise.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sdg">
+        <header class="h8"><div class="num">8</div><div class="goal"><small>Sustainable Development Goal 8</small>Decent Work and Economic Growth</div></header>
+        <div class="in">
+          <h3>Supporting a key industry under labour pressure</h3>
+          <ul>
+            <li>SkyT helps tea estates monitor large areas as labour becomes harder to find.</li>
+            <li>It reduces reliance on manual inspection and makes field management more data-driven.</li>
+            <li>The project earned a Merit Award at the National ICT Awards 2025.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sdg">
+        <header class="h12"><div class="num">12</div><div class="goal"><small>Sustainable Development Goal 12</small>Responsible Consumption and Production</div></header>
+        <div class="in">
+          <h3>Making better decisions with less guesswork</h3>
+          <ul>
+            <li>Sensors track soil nutrients (NPK), pH and humidity across each estate lot.</li>
+            <li>Time-stamped aerial images help managers spot problems early and act where they are needed.</li>
+            <li>Data-led monitoring supports more efficient use of land and inputs.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <h3 style="margin-bottom:1rem">Alignment at a glance</h3>
+    <div class="matrix-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Initiative</th>
+            <th scope="col" style="background:var(--s4)">SDG 4<br>Quality Education</th>
+            <th scope="col" style="background:var(--s8)">SDG 8<br>Decent Work</th>
+            <th scope="col" style="background:var(--s9)">SDG 9<br>Innovation</th>
+            <th scope="col" style="background:var(--s12)">SDG 12<br>Responsible Production</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AeroGenZ</td><td><span class="dot n4"></span><span class="sr">Aligned</span></td><td></td><td><span class="dot n9"></span><span class="sr">Aligned</span></td><td></td></tr>
+          <tr><td>AN-32B engine and aerospace exposure</td><td><span class="dot n4"></span><span class="sr">Aligned</span></td><td></td><td><span class="dot n9"></span><span class="sr">Aligned</span></td><td></td></tr>
+          <tr><td>ENGEX 2025 AeroZone</td><td><span class="dot n4"></span><span class="sr">Aligned</span></td><td></td><td><span class="dot n9"></span><span class="sr">Aligned</span></td><td></td></tr>
+          <tr><td>The Aero Girl</td><td><span class="dot n4"></span><span class="sr">Aligned</span></td><td></td><td></td><td></td></tr>
+          <tr><td>SkyT</td><td></td><td><span class="dot n8"></span><span class="sr">Aligned</span></td><td><span class="dot n9"></span><span class="sr">Aligned</span></td><td><span class="dot n12"></span><span class="sr">Aligned</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- POSTS -->
+<section id="posts" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Highlights from LinkedIn</h2>
+      <p class="lede">Follow the moments behind these projects in my own words.</p>
+    </div>
+    <!-- Tip: replace each title and description below with the real topic of the post -->
+    <div class="posts">
+      <a class="post" href="https://lnkd.in/p/gM2VCnnV" target="_blank" rel="noopener"><div class="li">in</div><strong>Highlight 1</strong><span>Read the post</span></a>
+      <a class="post" href="https://lnkd.in/p/gQFti8gM" target="_blank" rel="noopener"><div class="li">in</div><strong>Highlight 2</strong><span>Read the post</span></a>
+      <a class="post" href="https://lnkd.in/p/gmxXpn36" target="_blank" rel="noopener"><div class="li">in</div><strong>Highlight 3</strong><span>Read the post</span></a>
+      <a class="post" href="https://lnkd.in/p/gzbrvz9g" target="_blank" rel="noopener"><div class="li">in</div><strong>Highlight 4</strong><span>Read the post</span></a>
+      <a class="post" href="https://lnkd.in/p/gqaXQTzn" target="_blank" rel="noopener"><div class="li">in</div><strong>Highlight 5</strong><span>Read the post</span></a>
+      <a class="post" href="https://lnkd.in/p/gFJPsA-J" target="_blank" rel="noopener"><div class="li">in</div><strong>Highlight 6</strong><span>Read the post</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="wrap vision">
+    <div>
+      <h2>Why the Future Action Summit Australia</h2>
+      <p>My long-term vision is to become a technology-driven changemaker who develops resilient solutions while creating pathways for young people to take part in innovation.</p>
+      <p>The summit would let me learn from diverse young leaders, challenge my own perspectives and develop stronger ways to turn ideas into sustainable action. I hope to bring the view of a young engineer from Sri Lanka, and to return with knowledge, collaborations and strategies that amplify the initiatives I continue to build.</p>
+    </div>
+    <blockquote>
+      <p>I began by creating an opportunity for myself.</p>
+      <p>Today, my ambition is to create opportunities that outlive me.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="tint">
+  <div class="wrap">
+    <h2>Let's connect</h2>
+    <p class="lede">If you work on education, aerospace, agriculture technology or youth innovation, I would love to hear from you.</p>
+    <div class="contact-list">
+      <a class="btn primary" href="mailto:e20173@eng.pdn.ac.lk">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/sarani-vinodya-23072001" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/AeroSaraVJ23" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">Sarani Jayasooriya, Department of Computer Engineering, Faculty of Engineering, University of Peradeniya, Sri Lanka.</div>
+</footer>
+
+<dialog id="lightbox" aria-label="Photo viewer">
+  <form method="dialog"><button class="close">Close</button></form>
+  <img id="lightbox-img" alt="">
+</dialog>
+
+<script>
+  // Mobile menu
+  const btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', e => { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
+
+  // Load YouTube only when a video is clicked
+  document.querySelectorAll('.yt').forEach(b => {
+    b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.title = b.dataset.title;
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.replaceChildren(f);
+      b.style.cursor = 'default';
+    }, { once: true });
+  });
+
+  // Gallery lightbox
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.gallery button').forEach(b => {
+    b.addEventListener('click', () => { lbImg.src = b.dataset.full; lbImg.alt = b.querySelector('img').alt; lb.showModal(); });
+  });
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+</script>
+</body>
+</html>
